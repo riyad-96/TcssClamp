@@ -136,10 +136,8 @@ export default function App() {
             <button
               ref={formSubmitBtn}
               type="submit"
-              className="mx-auto block w-fit rounded-md bg-zinc-800 px-6 py-2 text-sm tracking-wider text-zinc-200"
-            >
-              Generate
-            </button>
+              className="hidden"
+            ></button>
           </div>
         </form>
 
