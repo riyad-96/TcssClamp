@@ -2,7 +2,8 @@
 @import "tailwindcss";
 
 :root {
-  --main-bg-clr: hsl(0, 0%, 96%);
+  --main-bg-clr: hsl(0, 0%, 100%);
+  --ring-clr: hsl(200, 80%, 50%, 0.6);
 }
 
 /* Resets */

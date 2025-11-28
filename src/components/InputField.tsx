@@ -6,6 +6,7 @@ type InputFieldPropsTypes = {
   label: string;
   name: string;
   className?: string;
+  placeholder: string;
 };
 
 export default function Input({
@@ -13,6 +14,7 @@ export default function Input({
   label,
   name,
   className,
+  placeholder,
 }: InputFieldPropsTypes) {
   const input = useRef<HTMLInputElement>(null);
   const changeUnitValue = (value: string) => {
@@ -30,18 +32,19 @@ export default function Input({
 
   return (
     <div className="grid gap-1">
-      <label className="w-fit" htmlFor={id}>
+      <label className="w-fit pl-0.5" htmlFor={id}>
         {label}
       </label>
-      <div className="relative">
+      <div className="relative rounded-md border border-zinc-300 px-3 ring-0 ring-(--ring-clr) transition-shadow focus-within:border-(--ring-clr) focus-within:ring-2">
         <input
           data-unit="px"
           ref={input}
           id={id}
           type="number"
           name={name}
+          placeholder={placeholder}
           step="any"
-          className={`w-full min-w-0 rounded-md border border-zinc-300 bg-white px-3 py-1.5 pr-17 outline-none ${className}`}
+          className={`w-full min-w-0 py-1.5 pr-17 transition-shadow outline-none ${className}`}
         />
         <div className="absolute top-1/2 right-0 z-5 flex h-full -translate-y-1/2 items-center pr-1.5">
           <select

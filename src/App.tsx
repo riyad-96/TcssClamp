@@ -103,11 +103,22 @@ export default function App() {
   const formSubmitBtn = useRef<HTMLButtonElement>(null);
 
   return (
-    <main className="height-screen grid place-items-center overflow-y-auto bg-(--main-bg-clr) p-3 pt-16 pb-12">
-      <div className="w-full max-w-[700px]">
+    <main className="height-screen grid place-items-center overflow-y-auto bg-(--main-bg-clr) p-4 pt-16 pb-12">
+      <div className="fixed top-2 left-2">
+        <button
+          onClick={() => window.location.reload()}
+          className="rounded-md bg-white px-2 py-1 text-xl font-semibold"
+        >
+          KitzoClamp
+        </button>
+      </div>
+
+      <div className="w-full max-w-[600px]">
         <div className="mb-6 space-y-2 text-center">
           <h1 className="text-2xl font-bold">CSS Clamp Generator</h1>
-          <p>Generate smooth, responsive values</p>
+          <p className="font-light tracking-wide opacity-80">
+            Generate smooth, responsive values
+          </p>
         </div>
 
         <form
@@ -117,19 +128,31 @@ export default function App() {
           }}
           onChange={() => formSubmitBtn.current?.click()}
         >
-          <div className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
+          <div className="grid gap-x-6 gap-y-2 sm:grid-cols-2 sm:gap-y-4">
             <InputField
               id="min_viewport_width"
-              label="Minimum viewport width"
+              label="Minimum viewport size"
               name="min_viewport_width"
+              placeholder="Viewport size"
             />
             <InputField
               id="max_viewport_width"
-              label="Maximum viewport width"
+              label="Maximum viewport size"
               name="max_viewport_width"
+              placeholder="Viewport size"
             />
-            <InputField id="min_size" label="Minimum size" name="min_size" />
-            <InputField id="max_size" label="Maximum size" name="max_size" />
+            <InputField
+              id="min_size"
+              label="Minimum size"
+              name="min_size"
+              placeholder="Minimum size"
+            />
+            <InputField
+              id="max_size"
+              label="Maximum size"
+              name="max_size"
+              placeholder="Maximum size"
+            />
           </div>
 
           <div className="my-8">
@@ -142,55 +165,56 @@ export default function App() {
         </form>
 
         <div>
-          <h2 className="text-center text-xl font-semibold">
-            Generated sizes:
-          </h2>
-
           {finalSizes && display ? (
-            <div className="mt-4">
-              <div className="mb-2 w-fit rounded-md bg-white px-2 shadow-sm">
-                <label htmlFor="prefix">Prefix: </label>
-                <input
-                  id="prefix"
-                  className="px-2 py-1.5 outline-none"
-                  type="text"
-                  onChange={(e) => setPrefix(e.target.value)}
-                  value={prefix}
-                  placeholder="Add prefix"
-                />
-              </div>
+            <>
+              <h2 className="text-center text-xl font-semibold">
+                Generated sizes:
+              </h2>
+              <div className="mt-4">
+                <div className="mb-2 w-fit rounded-md bg-zinc-100 px-2 inset-shadow-xs">
+                  <label htmlFor="prefix">Prefix: </label>
+                  <input
+                    id="prefix"
+                    className="px-2 py-1.5 outline-none"
+                    type="text"
+                    onChange={(e) => setPrefix(e.target.value)}
+                    value={prefix}
+                    placeholder="Add prefix"
+                  />
+                </div>
 
-              <div className="grid gap-2">
-                <ClampDisplay
-                  name="CSS"
-                  unit="px"
-                  content={display.normal.px}
-                  prefix={prefix}
-                />
+                <div className="grid gap-2">
+                  <ClampDisplay
+                    name="CSS"
+                    unit="px"
+                    content={display.normal.px}
+                    prefix={prefix}
+                  />
 
-                <ClampDisplay
-                  name="CSS"
-                  unit="rem"
-                  content={display.normal.rem}
-                  prefix={prefix}
-                />
-                <ClampDisplay
-                  name="Tailwindcss"
-                  unit="px"
-                  content={display.tailwindcss.px}
-                  prefix={prefix}
-                />
-                <ClampDisplay
-                  name="Tailwindcss"
-                  unit="rem"
-                  content={display.tailwindcss.rem}
-                  prefix={prefix}
-                />
+                  <ClampDisplay
+                    name="CSS"
+                    unit="rem"
+                    content={display.normal.rem}
+                    prefix={prefix}
+                  />
+                  <ClampDisplay
+                    name="Tailwindcss"
+                    unit="px"
+                    content={display.tailwindcss.px}
+                    prefix={prefix}
+                  />
+                  <ClampDisplay
+                    name="Tailwindcss"
+                    unit="rem"
+                    content={display.tailwindcss.rem}
+                    prefix={prefix}
+                  />
+                </div>
               </div>
-            </div>
+            </>
           ) : (
             <>
-              <p className="mx-auto mt-4 w-fit rounded-xl bg-white px-4 py-1 text-center opacity-80">
+              <p className="mx-auto mt-4 w-fit rounded-xl px-4 py-1 text-center text-sm font-light tracking-wide opacity-80">
                 Generated clamp sizes will appear here.
               </p>
             </>
