@@ -21,7 +21,7 @@ export default function SavedClampDisplay({
     <div className="group relative space-y-1 rounded-lg bg-zinc-100 px-3 py-1">
       <h5>
         <span className="font-medium">{name}:</span>{' '}
-        <span className="rounded-md bg-zinc-200 px-1.5 font-[fira-code] text-sm tracking-wide">
+        <span className="rounded-md bg-zinc-200 px-1.5 code-font text-sm tracking-wide">
           {unit}
         </span>
       </h5>
@@ -41,7 +41,7 @@ export default function SavedClampDisplay({
         </p>
       </div>
 
-      <p className="font-[fira_code] break-all">{content}</p>
+      <p className="code-font break-all">{content}</p>
 
       <div className="absolute right-2 bottom-2 z-10 flex gap-2">
         <Tooltip

@@ -49,12 +49,12 @@ export default function ClampDisplay({
       <div>
         <div className="mb-2 flex items-center gap-1">
           <span className="font-semibold">{name}</span>
-          <span className="rounded-md bg-zinc-200 px-1.5 font-[fira-code] text-sm tracking-wide">
+          <span className="rounded-md bg-zinc-200 px-1.5 code-font text-sm tracking-wide">
             {unit}
           </span>
           <span className="font-semibold">:</span>
         </div>
-        <p className="font-[fira_code] break-all">
+        <p className="code-font break-all">
           <span className="font-medium">{prefix}</span>
           {content}
         </p>

@@ -1,5 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Outfit:wght@100..900&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Outfit:wght@100..900&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'consolas';
+  src: url('/Consolas.woff2');
+}
 
 :root {
   --main-bg-clr: hsl(0, 0%, 100%);
@@ -12,27 +17,27 @@
 }
 body {
   font-family:
-    "Outfit",
+    'Outfit',
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
+    'Segoe UI',
     Roboto,
     Oxygen,
     Ubuntu,
     Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
+    'Open Sans',
+    'Helvetica Neue',
     sans-serif;
   color: hsl(0, 0%, 12%);
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   appearance: none;
 }
@@ -52,4 +57,8 @@ select {
 .height-screen {
   height: 100vh;
   height: 100dvh;
+}
+
+.code-font {
+  font-family: 'consolas', 'fira code', monospace;
 }

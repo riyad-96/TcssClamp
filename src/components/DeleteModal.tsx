@@ -52,10 +52,10 @@ export default function DeleteModal({
           scale: 0.8,
           opacity: 0,
         }}
-        className="w-full max-w-[350px] rounded-xl bg-white p-4 shadow-md"
+        className="w-full max-w-[450px] rounded-xl bg-white p-4 shadow-md"
       >
         <h5 className="text-lg font-medium">Delete this clamp?</h5>
-        <p>{content}</p>
+        <p className="code-font break-all" >{content}</p>
 
         <div className="mt-4 flex justify-end gap-1">
           <button

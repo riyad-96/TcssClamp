@@ -118,7 +118,7 @@ export default function App() {
   const [modal, setModal] = useState(false);
 
   return (
-    <main className="height-screen grid place-items-center overflow-y-auto bg-(--main-bg-clr) p-4 pt-16 pb-26">
+    <main className="height-screen overflow-y-auto bg-(--main-bg-clr) px-4 pt-20 pb-26">
       <div className="fixed top-2 left-2 z-10">
         <button
           onClick={() => window.location.reload()}
@@ -128,7 +128,7 @@ export default function App() {
         </button>
       </div>
 
-      <div className="w-full max-w-[600px]">
+      <div className="w-full max-w-[600px] mx-auto">
         <div className="mb-6 space-y-2 text-center">
           <h1 className="text-2xl font-bold">CSS Clamp Generator</h1>
           <p className="font-light tracking-wide opacity-80">
