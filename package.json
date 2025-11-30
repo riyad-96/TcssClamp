@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "kitzo": "^2.1.18",
+    "kitzo": "^2.1.19",
     "lucide-react": "^0.555.0",
     "motion": "^12.23.24",
     "react": "^19.2.0",
