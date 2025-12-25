@@ -149,7 +149,7 @@ export default function App() {
           onClick={() => window.location.reload()}
           className="rounded-md bg-white/80 px-2 py-1 text-xl font-semibold backdrop-blur-xs"
         >
-          KitzoClamp
+          TcssClamp
         </button>
       </div>
 
